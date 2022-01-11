@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CourseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified'])->group(function(){
+    Route::get('/dashboard',[CourseController::class, 'index'])->name('dashboard');
+
+    Route::get('/course', [CourseController::class, 'add']);
+    Route::post('/course',[CourseController::class, 'create']);
+
+    Route::get('/course_info/{course}', [CourseController::class, 'preview']);
+
+});
