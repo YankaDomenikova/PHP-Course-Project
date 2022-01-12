@@ -88,13 +88,11 @@ class CourseController extends Controller
 
 
             $teacher = DB::table('teachers')->where('full_name', $request->get('full_name'))->first();
-
             $course->teacher_id = $teacher->id;
 
 
             $org = DB::table('organizations')->where('organization_name', $request->get('organization_name'))->first();
             $course->organization_id = $org->id;
-            //$course->organization_id = $org->id;
 
 
             $course->save();

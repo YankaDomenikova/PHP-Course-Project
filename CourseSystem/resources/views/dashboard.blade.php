@@ -42,10 +42,19 @@
                                     {{$c->venue}}
                                 </td>
                                 <td class="p-3 px-5">
+                                    @if($c->teacher_id != null)
                                     {{$c->teacher->full_name}}
+                                    @else
+                                    -
+                                    @endif
                                 </td>
                                  <td class="p-3 px-5">
-                                     {{$c->organization->organization_name}}
+                                     @if($c->organization_id != null)
+                                         {{$c->organization->organization_name}}
+                                     @else
+                                         -
+                                     @endif
+
                                  </td>
                                 <td class="p-3 px-5 flex">
                                     <a href="/course_info/{{$c->id}}" name="info" class="mr-3 text-sm bg-blue-500 hover:bg-blue-700  py-1 px-2 rounded focus:outline-none focus:shadow-outline">Preview</a>

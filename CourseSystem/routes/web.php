@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\TeacherController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,4 +31,9 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function(){
     Route::post('/edit_course/{course}', [CourseController::class, 'update']);
 
 
+    Route::get('/teachers',[TeacherController::class, 'allTeachers'])->name('teachers');
+    Route::get('/teacher', [TeacherController::class, 'add']);
+    Route::post('/teacher',[TeacherController::class, 'create']);
+    Route::get('/edit_teacher/{teacher}', [TeacherController::class, 'edit']);
+    Route::post('/edit_teacher/{teacher}', [TeacherController::class, 'update']);
 });

@@ -33,16 +33,30 @@
                         @if ($errors->has('venue'))
                             <span class="text-danger">{{ $errors->first('venue') }}</span>
                         @endif
-                        <select name="full_name">
-                            <option value="">{{$course->teacher->full_name}}</option>
+                        <select name="full_name" >
+                            @if($course->teacher_id != null)
+                                <option value="{{$course->teacher->full_name}}" selected>{{$course->teacher->full_name}} </option>
+                            @else
+                                <option value="-" selected>-</option>
+                            @endif
+                                @foreach($teacher as $t)
+                                    @if($t->id != $course->teacher_id)
+                                        <option value="{{$t->full_name}}">{{$t->full_name}}</option>
+                                    @endif
+                                @endforeach
+                            {{--<option value="{{$course->teacher->full_name}}" selected>{{$course->teacher->full_name}} </option>
                             @foreach($teacher as $t)
-                                <option value="{{$t->full_name}}">{{$t->full_name}}</option>
-                            @endforeach
+                                @if($t->id != $course->teacher_id)
+                                    <option value="{{$t->full_name}}">{{$t->full_name}}</option>
+                                @endif
+                            @endforeach--}}
                         </select>
-                        <select name="organization_name">
-                            <option value="">{{$course->organization->organization_name}}</option>
+                        <select name="organization_name" >
+                            <option value="{{$course->organization->organization_name}}" selected>{{$course->organization->organization_name}} </option>
                             @foreach($organization as $org)
-                                <option value="{{$org->organization_name}}">{{$org->organization_name}}</option>
+                                @if($org->id != $course->organization_id)
+                                    <option value="{{$org->organization_name}}">{{$org->organization_name}}</option>
+                                @endif
                             @endforeach
                         </select>
                     </div>
