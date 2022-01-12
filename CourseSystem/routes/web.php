@@ -19,11 +19,15 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function(){
-    Route::get('/dashboard',[CourseController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard',[CourseController::class, 'allCourses'])->name('dashboard');
 
     Route::get('/course', [CourseController::class, 'add']);
     Route::post('/course',[CourseController::class, 'create']);
 
     Route::get('/course_info/{course}', [CourseController::class, 'preview']);
+
+    Route::get('/edit_course/{course}', [CourseController::class, 'edit']);
+    Route::post('/edit_course/{course}', [CourseController::class, 'update']);
+
 
 });

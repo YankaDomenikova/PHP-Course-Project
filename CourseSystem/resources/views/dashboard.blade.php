@@ -50,7 +50,7 @@
                                 <td class="p-3 px-5 flex">
                                     <a href="/course_info/{{$c->id}}" name="info" class="mr-3 text-sm bg-blue-500 hover:bg-blue-700  py-1 px-2 rounded focus:outline-none focus:shadow-outline">Preview</a>
                                     <a href="/edit_course/{{$c->id}}" name="edit" class="mr-3 text-sm bg-blue-500 hover:bg-blue-700  py-1 px-2 rounded focus:outline-none focus:shadow-outline">Edit</a>
-                                    <form action="" class="inline-block">
+                                    <form action="/edit_course/{{$c->id}}" class="inline-block">
                                         <button type="submit" name="delete" formmethod="POST" class="text-sm bg-red-500 hover:bg-red-700  py-1 px-2 rounded focus:outline-none focus:shadow-outline">Delete</button>
                                         {{ csrf_field() }}
                                     </form>
