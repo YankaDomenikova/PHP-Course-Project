@@ -14,7 +14,13 @@
                 <div>{{$course->date}}</div>
                 <div>{{$course->duration}}</div>
                 <div>{{$course->venue}}</div>
-                <div>{{$course->teacher->full_name}}</div>
+                <div>
+                    @if($course->teacher_id != null)
+                        {{$course->teacher->full_name}}
+                    @else
+                        -
+                    @endif
+                </div>
                 <div>{{$course->organization->organization_name}}</div>
             </div>
         </div>

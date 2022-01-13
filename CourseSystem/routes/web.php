@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\OrganizationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,12 +22,9 @@ Route::get('/', function () {
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function(){
     Route::get('/dashboard',[CourseController::class, 'allCourses'])->name('dashboard');
-
     Route::get('/course', [CourseController::class, 'add']);
     Route::post('/course',[CourseController::class, 'create']);
-
     Route::get('/course_info/{course}', [CourseController::class, 'preview']);
-
     Route::get('/edit_course/{course}', [CourseController::class, 'edit']);
     Route::post('/edit_course/{course}', [CourseController::class, 'update']);
 
@@ -36,4 +34,11 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function(){
     Route::post('/teacher',[TeacherController::class, 'create']);
     Route::get('/edit_teacher/{teacher}', [TeacherController::class, 'edit']);
     Route::post('/edit_teacher/{teacher}', [TeacherController::class, 'update']);
+
+    Route::get('/organizations',[OrganizationController::class, 'allOrganizations'])->name('organizations');
+
+    Route::get('/organization', [OrganizationController::class, 'add']);
+    Route::post('/organization',[OrganizationController::class, 'create']);
+    Route::get('/edit_organization/{organization}', [OrganizationController::class, 'edit']);
+    Route::post('edit_organization/{organization}', [OrganizationController::class, 'update']);
 });

@@ -17,9 +17,8 @@ class CourseController extends Controller
 
     public function add(){
         $teacher = Teacher::all();
-        $course = Course::all();
         $organization = Organization::all();
-        return view('add_course', compact('course', 'teacher', 'organization'));
+        return view('add_course', compact( 'teacher', 'organization'));
     }
 
     public function create(Request  $request){

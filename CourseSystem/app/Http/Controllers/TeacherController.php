@@ -14,7 +14,6 @@ class TeacherController extends Controller
     }
 
     public function add(){
-        $teacher = Teacher::all();
         return view('add_teacher' );
     }
 
