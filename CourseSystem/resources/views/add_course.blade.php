@@ -9,9 +9,32 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-5">
 
-                <form method="POST" action="/course" >
+                @if ($message = Session::get('success'))
+                    <div class="alert alert-success alert-block">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>{{ $message }}</strong>
+
+                    </div>
+                    <img src="images/{{ Session::get('image') }}">
+                @endif
+
+                @if (count($errors) > 0)
+                    <div class="alert alert-danger">
+                        <strong>Whoops!</strong> There were some problems with your image input.
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
+                <form method="POST" action="/course"  enctype="multipart/form-data">
 
                     <div class="form-group">
+                        <div class="col-md-6">
+                            <input type="file" name="image" class="form-control">
+                        </div>
                         <textarea name="course_name" class="bg-gray-100 rounded"  placeholder='Name'></textarea>
                         @if ($errors->has('course_name'))
                             <span class="text-danger">{{ $errors->first('course_name') }}</span>

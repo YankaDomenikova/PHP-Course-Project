@@ -16,6 +16,7 @@
 
                     <table class="w-full text-md rounded mb-4">
                         <th class="text-left p-3 px-5">Course</th>
+                        <th class="text-left p-3 px-5">Image</th>
                         <th class="text-left p-3 px-5">Category</th>
                         <th class="text-left p-3 px-5">Date</th>
                         <th class="text-left p-3 px-5">Duration</th>
@@ -28,6 +29,9 @@
                             <tr class="border-b hover:bg-orange-100">
                                 <td class="p-3 px-5">
                                     {{$c->course_name}}
+                                </td>
+                                <td class="p-3 px-5">
+                                    <img src="{{$c->img_url}}" width="100px">
                                 </td>
                                 <td class="p-3 px-5">
                                     {{$c->category}}
