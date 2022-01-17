@@ -5,6 +5,7 @@
         </h2>
     </x-slot>
 
+    <a href="{{ url('/') }}">Go to all courses</a>
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class=" mt-2" style="margin-bottom: 20px;">
@@ -31,7 +32,7 @@
                                     {{$c->course_name}}
                                 </td>
                                 <td class="p-3 px-5">
-                                    <img src="{{$c->img_url}}" width="100px">
+                                    <img src="{{$c->img_url}}" style="max-height: 50px" >
                                 </td>
                                 <td class="p-3 px-5">
                                     {{$c->category}}

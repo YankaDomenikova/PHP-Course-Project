@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class OrganizationController extends Controller
 {
+    public function index(){
+        $organization = Organization::all();
+        return view('organizations_list_public', compact('organization'));
+    }
+
     public function allOrganizations(){
         $organization = Organization::all();
         return view('organizations_list_admin', compact('organization'));

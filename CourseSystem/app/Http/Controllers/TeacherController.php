@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\DB;
 
 class TeacherController extends Controller
 {
+    public function index(){
+        $teacher = Teacher::all();
+        return view('teachers_list_public',  compact('teacher'));
+    }
+
     public function allTeachers(){
         $teacher = Teacher::all();
         return view('teachers_list_admin',  compact('teacher'));

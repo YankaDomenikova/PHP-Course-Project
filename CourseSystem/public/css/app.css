@@ -43,6 +43,11 @@ html {
 body {
   margin: 0; /* 1 */
   line-height: inherit; /* 2 */
+    background: linear-gradient(200deg, rgb(165, 197, 206), transparent 55%),
+    linear-gradient(45deg, rgba(150, 184, 227, 0.8), transparent 55%),
+    linear-gradient(135deg, rgb(203, 232, 216), transparent 60%),
+    linear-gradient(310deg, rgba(222, 239, 168, 0.8), transparent 55%),
+    radial-gradient(circle at center, rgb(224, 255, 216) 15%, transparent);
 }
 
 /*

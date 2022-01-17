@@ -9,13 +9,20 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-5">
 
-                <form method="POST" action="/edit_course/{{$course->id}}">
+                <form method="POST" action="/edit_course/{{$course->id}}" enctype="multipart/form-data">
 
                     <div class="form-group">
                         <textarea name="course_name" class="bg-gray-100 rounded"  placeholder='Name'>{{$course->course_name}}</textarea>
                         @if ($errors->has('course_name'))
                             <span class="text-danger">{{ $errors->first('course_name') }}</span>
                         @endif
+                        <div class="col-md-6">
+                            <img src="/{{$course->img_url}}" style="max-height: 50px" >
+                            <input type="file" name="image" class="form-control" placeholder="Choose image">
+                            @if ($errors->has('image'))
+                                <span class="text-danger">{{ $errors->first('image') }}</span>
+                            @endif
+                        </div>
                         <textarea name="category" class="bg-gray-100 rounded"  placeholder='Category'>{{$course->category}}</textarea>
                         @if ($errors->has('category'))
                             <span class="text-danger">{{ $errors->first('category') }}</span>
@@ -44,12 +51,6 @@
                                         <option value="{{$t->full_name}}">{{$t->full_name}}</option>
                                     @endif
                                 @endforeach
-                            {{--<option value="{{$course->teacher->full_name}}" selected>{{$course->teacher->full_name}} </option>
-                            @foreach($teacher as $t)
-                                @if($t->id != $course->teacher_id)
-                                    <option value="{{$t->full_name}}">{{$t->full_name}}</option>
-                                @endif
-                            @endforeach--}}
                         </select>
                         <select name="organization_name" >
                             <option value="{{$course->organization->organization_name}}" selected>{{$course->organization->organization_name}} </option>

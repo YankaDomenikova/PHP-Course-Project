@@ -32,13 +32,14 @@
                 <form method="POST" action="/course"  enctype="multipart/form-data">
 
                     <div class="form-group">
-                        <div class="col-md-6">
-                            <input type="file" name="image" class="form-control">
-                        </div>
+
                         <textarea name="course_name" class="bg-gray-100 rounded"  placeholder='Name'></textarea>
                         @if ($errors->has('course_name'))
                             <span class="text-danger">{{ $errors->first('course_name') }}</span>
                         @endif
+                        <div class="col-md-6">
+                            <input type="file" name="image" class="form-control">
+                        </div>
                         <textarea name="category" class="bg-gray-100 rounded"  placeholder='Category'></textarea>
                         @if ($errors->has('category'))
                             <span class="text-danger">{{ $errors->first('category') }}</span>

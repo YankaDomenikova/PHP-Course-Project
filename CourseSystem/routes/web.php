@@ -16,9 +16,14 @@ use App\Http\Controllers\OrganizationController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/',[CourseController::class, 'index']);
+Route::get('/all_teachers',[TeacherController::class, 'index']);
+Route::get('/all_organizations',[OrganizationController::class, 'index']);
+Route::get('/search',[CourseController::class, 'search']);
+
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function(){
     Route::get('/dashboard',[CourseController::class, 'allCourses'])->name('dashboard');
