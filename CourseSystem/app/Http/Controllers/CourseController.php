@@ -22,6 +22,8 @@ class CourseController extends Controller
             ->join('organizations', 'courses.organization_id', '=', 'organizations.id')
             ->where('teachers.full_name', 'LIKE',  '%'.$search.'%')
             ->orWhere('courses.course_name', 'LIKE',  '%'.$search.'%')
+            ->orWhere('courses.date', 'LIKE',  '%'.$search.'%')
+            ->orWhere('courses.category', 'LIKE',  '%'.$search.'%')
             ->orWhere('organizations.organization_name', 'LIKE',  '%'.$search.'%')->get();
         return view('welcome', compact('course'));
     }

@@ -86,7 +86,7 @@
             </div>
         </nav>
 
-        <main class="">
+        <main>
             <div class="page-content col">
                 @foreach($course as $c)
                     <div class="col-3">

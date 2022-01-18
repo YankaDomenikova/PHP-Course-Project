@@ -1,0 +1,316 @@
+:root{
+    --main: rgba(4, 80, 80, 1);
+}
+
+body {
+    min-height: 100vh;
+    margin: 0; /* 1 */
+    line-height: inherit; /* 2 */
+    background: linear-gradient(200deg, rgb(165, 197, 206), transparent 55%),
+    linear-gradient(45deg, rgba(150, 184, 227, 0.8), transparent 55%),
+    linear-gradient(135deg, rgb(203, 232, 216), transparent 60%),
+    linear-gradient(310deg, rgba(222, 239, 168, 0.8), transparent 55%),
+    radial-gradient(circle at center, rgb(224, 255, 216) 15%, transparent);
+}
+
+nav {
+    padding-bottom: 0 !important;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: inset 0px -1px 1px 0px rgba(255, 255, 255, 0.25),
+    0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+}
+
+.nav-top {
+    height: 70px;
+    box-shadow: inset 0px -1px 1px 0px rgba(255, 255, 255, 0.25),
+    0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+}
+
+.nav-bottom {
+    display: flex;
+    height: 55px;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(4, 80, 80, 1);
+}
+
+.project-name {
+    font-weight: 400;
+    font-size: 26px;
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: rgba(4, 80, 80, 1);
+    font-size: 17px;
+}
+
+.auth-nav .nav-item .nav-link {
+    font-size: 16px;
+}
+
+
+form {
+    position: relative;
+}
+
+.search {
+    background: rgba(255, 255, 255, 0.05);
+    border: none;
+    outline: none;
+    width: 235px;
+    height: 32px;
+    box-shadow: inset 1px 1px 0px 0px rgba(255, 255, 255, 0.25),
+    inset -1px -1px 0px 0px rgba(255, 255, 255, 0.1),
+    1px 1px 2px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    padding: 0 35px 0 12px;
+    color: rgba(4, 80, 80, 1);
+}
+
+button.search-btn {
+    color: rgba(4, 80, 80, 0.8);
+    background: transparent;
+    border: none;
+    position: absolute;
+    right: 8px;
+    bottom: 5px;
+}
+
+.search:focus,
+.search:active{
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+    margin-right: 10px;
+    height: 54px;
+    width: 54px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.logo div {
+    position: relative;
+    height: 27px;
+    width: 27px;
+    overflow: hidden;
+}
+
+.logo div::before {
+    content: "";
+    position: absolute;
+    height: 54px;
+    width: 54px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+.logo .top-right::before {
+    top: 0;
+    right: 0;
+}
+.logo .top-left::before {
+    top: 0;
+    left: 0;
+}
+.logo .bottom-left::before {
+    bottom: 0;
+    left: 0;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 50px;
+}
+.page-content {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+.glass {
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: inset 1px 1px 0px 0px rgba(255, 255, 255, 0.1),
+    inset -1px -1px 1px 0px rgba(255, 255, 255, 0.05),
+    1px 2px 4px -2px rgba(0, 0, 0, 0.15);
+}
+
+.col-3 {
+    height: 350px;
+    padding: 10px 25px;
+    margin-bottom: 10px;
+}
+
+.course-card {
+    border-radius: 20px;
+    height: 100%;
+    color: var(--main);
+}
+
+.course-card .course-img {
+    max-width: 120px;
+    height: 160px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+.course-card .course-img img {
+    max-height: 120px;
+    max-width: 120px;
+    width: auto;
+}
+
+ .course-card {
+  overflow: hidden;
+}
+
+.course-name {
+    font-size: 21px;
+}
+
+.teacher-name {
+    font-size: 14px;
+}
+.venue {
+    color: rgb(50, 126, 126);
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+.course-details {
+    display: flex;
+    align-items: center;
+}
+.course-details div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px;
+    font-size: 15px;
+}
+.course-details div span {
+    margin-left: 2px;
+}
+
+.category {
+    position: relative;
+    left: -15px;
+    padding-left: 15px;
+    border-bottom: 12px solid rgba(54, 109, 125, 0.1);
+    border-top: 12px solid rgba(54, 109, 125, 0.1);
+    border-right: 15px solid transparent;
+    height: 0px;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.category span {
+    color: var(--main);
+}
+
+/*------------- Teachers list --------------------*/
+
+.glass-table {
+    width: 100%;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: inset 1px 1px 0px 0px rgba(255, 255, 255, 0.1),
+    inset -1px -1px 1px 0px rgba(255, 255, 255, 0.05),
+    1px 2px 4px -2px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.teachers-table td {
+    padding: 12px 35px 0px 35px;
+    color: var(--main);
+    box-shadow: inset -0px -1px 1px 0px rgba(255, 255, 255, 0.2),
+    1px 2px 4px -2px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+}
+
+.teachers-table td .teachers-name {
+    font-size: 20px;
+}
+.teachers-table td .teachers-courses {
+    padding: 10px 30px;
+    margin-top: 5px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.teachers-table td .teachers-courses .teachers-course {
+    padding: 8px 15px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: inset 1px 1px 0px 0px rgba(255, 255, 255, 0.1),
+    inset -1px -1px 1px 0px rgba(255, 255, 255, 0.05),
+    1px 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+/*---------------------- Organizations list ----------------------*/
+.org-table tr {
+    height: 40px;
+    box-shadow: inset -0px -1px 1px 0px rgba(255, 255, 255, 0.2),
+    1px 2px 4px -2px rgba(0, 0, 0, 0.08);
+}
+
+.org-table tr th,
+.org-table tr td {
+    padding: 15px 20px;
+    width: 50%;
+    color: var(--main);
+    box-shadow: inset -1px -0px 1px 0px rgba(255, 255, 255, 0.25),
+    1px 0px 4px -2px rgba(0, 0, 0, 0.08);
+}
+
+/*------------------------------- Login & Register ----------------------------------*/
+.glass-form{
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: inset 1px 1px 0px 0px rgba(255, 255, 255, 0.25),
+    inset -1px -1px 1px 0px rgba(255, 255, 255, 0.1),
+    1px 2px 4px -2px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 20px;
+    color: var(--main);
+}
+
+.glass-form  input{
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: inset 1px 1px 0px 0px rgba(255, 255, 255, 0.5),
+    inset -1px -1px 1px 0px rgba(255, 255, 255, 0.3),
+    1px 2px 4px -2px rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+}
+
+.glass-form button{
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: inset 1px 1px 0px 0px rgba(255, 255, 255, 0.6),
+    inset -1px -1px 1px 0px rgba(255, 255, 255, 0.4),
+    1px 2px 4px -2px rgba(0, 0, 0, 0.05);
+    color: var(--main);
+}
+
+.glass-form button:hover{
+    background:  rgba(54, 109, 125, 0.25);
+    box-shadow: inset 1px 1px 0px 0px rgba(255, 255, 255, 0.1),
+    inset -1px -1px 1px 0px rgba(255, 255, 255, 0.05),
+    1px 2px 4px -2px rgba(0, 0, 0, 0.05);
+}
