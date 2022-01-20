@@ -9,7 +9,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="overflow-hidden ">
 
-                <form method="POST" action="/course"  enctype="multipart/form-data" class="glass-form add-from">
+                <form method="POST" action="/course"  enctype="multipart/form-data" class="glass-form add-form">
                     <div clas="form-group">
                         <div class="row flex">
                             <div>
