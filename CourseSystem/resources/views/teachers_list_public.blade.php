@@ -86,7 +86,7 @@
     </div>
 </nav>
 
-<main class="">
+<main class="main">
     <div class="page-content col-8">
         <table class="glass-table teachers-table">
             @foreach($teacher as $t)
@@ -102,25 +102,6 @@
                 </tr>
             @endforeach
         </table>
-
-        {{--<table>
-            @foreach($teacher as $t)
-                <tr>
-                    <td>{{$t->full_name}} </td>
-                    <td>
-                     @foreach($t->courses as $course)
-                    {{$course->course_name}}
-                    @endforeach
-                    </td>
-                </tr>
-            @endforeach
-            <tr>
-                <td>
-
-                </td>
-            </tr>
-        </table>--}}
-
     </div>
 </main>
 </body>

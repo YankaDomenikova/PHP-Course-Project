@@ -1,7 +1,9 @@
 :root{
     --main: rgba(4, 80, 80, 1);
 }
-
+.color-main{
+    color: var(--main);
+}
 body {
     min-height: 100vh;
     margin: 0; /* 1 */
@@ -61,11 +63,14 @@ form {
     background: rgba(255, 255, 255, 0.05);
     border: none;
     outline: none;
-    width: 235px;
+    width: 270px;
     height: 32px;
-    box-shadow: inset 1px 1px 0px 0px rgba(255, 255, 255, 0.25),
+    box-shadow: inset 1px 1px 2px 0px rgba(0, 0, 0, 0.05),
+    inset -1px -1px 0px 0px rgba(255, 255, 255, 0.18),
+    -1px -1px 0px 0px rgba(255, 255, 255, 0.15);
+    /*box-shadow: inset 1px 1px 0px 0px rgba(255, 255, 255, 0.25),
     inset -1px -1px 0px 0px rgba(255, 255, 255, 0.1),
-    1px 1px 2px 0px rgba(0, 0, 0, 0.1);
+    1px 1px 2px 0px rgba(0, 0, 0, 0.1);*/
     border-radius: 20px;
     padding: 0 35px 0 12px;
     color: rgba(4, 80, 80, 1);
@@ -122,7 +127,7 @@ button.search-btn {
     left: 0;
 }
 
-main {
+.main {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -288,6 +293,9 @@ main {
     border-radius: 20px;
     color: var(--main);
 }
+.glass-form label{
+    color: var(--main);
+}
 
 .glass-form  input{
     border: none;
@@ -313,4 +321,146 @@ main {
     box-shadow: inset 1px 1px 0px 0px rgba(255, 255, 255, 0.1),
     inset -1px -1px 1px 0px rgba(255, 255, 255, 0.05),
     1px 2px 4px -2px rgba(0, 0, 0, 0.05);
+}
+
+/*------------------------------- Dashboard ----------------------------------*/
+header{
+    background: rgba(255, 255, 255, 0.2) !important;
+    box-shadow: inset 0px -1px 1px 0px rgba(255, 255, 255, 0.25),
+    0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+}
+.panel-table tr:hover{
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.panel-table td,
+.panel-table th{
+    padding: 8px 10px;
+}
+
+.panel-btn{
+    border-radius: 10px;
+    padding: 10px 15px;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: inset 1px 1px 0px 0px rgba(255, 255, 255, 0.1),
+    inset -1px -1px 1px 0px rgba(255, 255, 255, 0.05),
+    1px 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+/*------------------------ Course info ----------------------*/
+.card-body-lg {
+    width: 400px;
+    border-radius: 20px;
+    height: 390px;
+    padding: 0 20px;
+    color: var(--main);
+    overflow: hidden;
+}
+
+.card-body-lg .course-img {
+    max-width: 170px;
+    height: 180px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+.course-card .course-img img {
+    max-height: 170px;
+    max-width: 170px;
+    width: auto;
+}
+
+
+.card-body-lg .course-name {
+    font-size: 26px;
+}
+
+.card-body-lg .teacher-name {
+    font-size: 17px;
+}
+.card-body-lg .venue {
+    color: rgb(50, 126, 126);
+    font-size: 17px;
+    margin-bottom: 12px;
+}
+.card-body-lg .course-details {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+.card-body-lg .course-details div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px;
+    font-size: 18px;
+}
+.course-details div span {
+    margin-left: 2px;
+}
+
+.card-body-lg .category {
+    position: relative;
+    left: -20px;
+    padding-left: 20px;
+    border-bottom: 20px solid rgba(54, 109, 125, 0.1);
+    border-top: 20px solid rgba(54, 109, 125, 0.1);
+    border-right: 15px solid transparent;
+    height: 0px;
+    width: 55%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.card-body-lg .category span {
+    color: var(--main);
+    font-size: 18px;
+}
+
+/*------------------- Add form -----------------*/
+.add-from .row div{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 15px;
+}
+
+.add-from .row div label {
+    color: var(--main);
+}
+
+.add-from .row div input,
+.add-from .row div select{
+    height: 60px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: inset 1px 1px 3px 0px rgba(0, 0, 0, 0.08),
+    inset -1px -1px 2px 0px rgba(255, 255, 255, 0.3),
+    -1px -1px 0px 0px rgba(255, 255, 255, 0.1);
+    padding: 5px 15px;
+    color: var(--main);
+    border: none;
+    font-size: 17px;
+}
+.add-from .row div  .form-img-input {
+    padding: 17px 0 0 20px;
+}
+
+.add-from .form-btn{
+    margin-top: 15px;
+    margin-left: 15px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    color: rgb(43, 86, 99);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: inset 1px 1px 0px 0px rgba(255, 255, 255, 0.2),
+    inset -1px -1px 1px 0px rgba(255, 255, 255, 0.1),
+    1px 2px 4px -2px rgba(0, 0, 0, 0.1);
+
 }

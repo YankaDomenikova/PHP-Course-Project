@@ -7,72 +7,99 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-5">
+            <div class="overflow-hidden ">
 
-                @if ($message = Session::get('success'))
-                    <div class="alert alert-success alert-block">
-                        <button type="button" class="close" data-dismiss="alert">×</button>
-                        <strong>{{ $message }}</strong>
-
-                    </div>
-                    <img src="images/{{ Session::get('image') }}">
-                @endif
-
-                @if (count($errors) > 0)
-                    <div class="alert alert-danger">
-                        <strong>Whoops!</strong> There were some problems with your image input.
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
-
-                <form method="POST" action="/course"  enctype="multipart/form-data">
-
-                    <div class="form-group">
-
-                        <textarea name="course_name" class="bg-gray-100 rounded"  placeholder='Name'></textarea>
-                        @if ($errors->has('course_name'))
-                            <span class="text-danger">{{ $errors->first('course_name') }}</span>
-                        @endif
-                        <div class="col-md-6">
-                            <input type="file" name="image" class="form-control">
+                <form method="POST" action="/course"  enctype="multipart/form-data" class="glass-form add-from">
+                    <div clas="form-group">
+                        <div class="row flex">
+                            <div>
+                                <label for="course_name">Course Name</label>
+                                <input type="text" name="course_name">
+                                @if ($errors->has('course_name'))
+                                    <span class="text-danger">{{ $errors->first('course_name') }}</span>
+                                @endif
+                            </div>
+                            <div>
+                                <label for="image">Image</label>
+                                <input type="file" name="image" class="form-control form-img-input">
+                                @if ($message = Session::get('success'))
+                                    <div class="alert alert-success alert-block">
+                                        <button type="button" class="close" data-dismiss="alert">×</button>
+                                        <strong>{{ $message }}</strong>
+                                    </div>
+                                    <img src="images/{{ Session::get('image') }}">
+                                @endif
+                                @if (count($errors) > 0)
+                                    <div class="alert alert-danger">
+                                        <strong>Whoops!</strong> There were some problems with your image input.
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
+                            </div>
                         </div>
-                        <textarea name="category" class="bg-gray-100 rounded"  placeholder='Category'></textarea>
-                        @if ($errors->has('category'))
-                            <span class="text-danger">{{ $errors->first('category') }}</span>
-                        @endif
-                        <input type="date" name="date">
-                        @if ($errors->has('date'))
-                            <span class="text-danger">{{ $errors->first('date') }}</span>
-                        @endif
-                        <input type="number" name="duration">
-                        @if ($errors->has('duration'))
-                            <span class="text-danger">{{ $errors->first('duration') }}</span>
-                        @endif
 
-                        <textarea name="venue" class="bg-gray-100 rounded"  placeholder='Venue'></textarea>
-                        @if ($errors->has('venue'))
-                            <span class="text-danger">{{ $errors->first('venue') }}</span>
-                        @endif
-                        <select name="full_name">
-                            <option value="">-</option>
-                            @foreach($teacher as $t)
-                                <option value="{{$t->full_name}}">{{$t->full_name}}</option>
-                            @endforeach
-                        </select>
-                        <select name="organization_name">
-                            <option value="">-</option>
-                            @foreach($organization as $org)
-                                <option value="{{$org->organization_name}}">{{$org->organization_name}}</option>
-                            @endforeach
-                        </select>
+                        <div class="row flex">
+                            <div>
+                                <label for="category">Category</label>
+                                <input type="text" name="category" >
+                                @if ($errors->has('category'))
+                                    <span class="text-danger">{{ $errors->first('category') }}</span>
+                                @endif
+                            </div>
+                            <div>
+                                <label for="venue">Venue</label>
+                                <input type="text" name="venue" >
+                                @if ($errors->has('venue'))
+                                    <span class="text-danger">{{ $errors->first('venue') }}</span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="row flex">
+                            <div>
+                                <label for="date">Date</label>
+                                <input type="date" name="date">
+                                @if ($errors->has('date'))
+                                    <span class="text-danger">{{ $errors->first('date') }}</span>
+                                @endif
+                            </div>
+                            <div>
+                                <label for="duration">Duration</label>
+                                <input type="number" name="duration">
+                                @if ($errors->has('duration'))
+                                    <span class="text-danger">{{ $errors->first('duration') }}</span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="row flex">
+                            <div>
+                                <label for="full_name">Teacher</label>
+                                <select name="full_name">
+                                    <option value="">-</option>
+                                    @foreach($teacher as $t)
+                                        <option value="{{$t->full_name}}">{{$t->full_name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div>
+                                <label for="organization_name">Organization</label>
+                                <select name="organization_name">
+                                    <option value="">-</option>
+                                    @foreach($organization as $org)
+                                        <option value="{{$org->organization_name}}">{{$org->organization_name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="form-group">
-                        <button type="submit" class="bg-blue-500 hover:bg-blue-700 font-bold py-2 px-4 rounded">Add Task</button>
+                        <button type="submit" class="form-btn">Add Course</button>
                     </div>
                     {{ csrf_field() }}
                 </form>

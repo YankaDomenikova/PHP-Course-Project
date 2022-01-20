@@ -86,7 +86,7 @@
     </div>
 </nav>
 
-<main class="">
+<main class="main">
     <div class="page-content col-6">
         <table class="glass-table org-table">
             <tr>
