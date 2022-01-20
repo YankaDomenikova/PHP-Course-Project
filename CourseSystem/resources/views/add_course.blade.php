@@ -1,14 +1,13 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h2 class="font-semibold text-xl color-main leading-tight">
             {{ __('Add Course') }}
         </h2>
     </x-slot>
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="overflow-hidden ">
-
+            <div class="overflow-hidden">
                 <form method="POST" action="/course"  enctype="multipart/form-data" class="glass-form add-form">
                     <div clas="form-group">
                         <div class="row flex">

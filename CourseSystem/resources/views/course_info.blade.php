@@ -14,7 +14,18 @@
                 <img src="/{{$course->img_url}}" class="card-img-top" alt="...">
             </div>
             <h5 class="card-title course-name">{{$course->course_name}}</h5>
-            <h6 class="card-subtitle teacher-name ">by {{$course->teacher->full_name}}, {{$course->organization->organization_name}}</h6>
+            <h6 class="card-subtitle teacher-name ">by
+                @if($course->teacher_id != null)
+                    {{$course->teacher->full_name}}
+                @else
+                    -
+                @endif,
+                @if($course->organization_id != null)
+                    {{$course->organization->organization_name}}
+                @else
+                    -
+                @endif
+            </h6>
             <p class="venue">{{$course->venue}}</p>
             <div class="course-details">
                 <div>

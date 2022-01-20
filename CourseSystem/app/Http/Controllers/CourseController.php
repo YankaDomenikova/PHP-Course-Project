@@ -95,7 +95,7 @@ class CourseController extends Controller
         {
             $this->validate($request, [
                 'course_name' => 'required',
-                /*'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',*/
+                'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
                 'category' => 'required',
                 'date' => 'required',
                 'duration' => 'required',
@@ -107,11 +107,13 @@ class CourseController extends Controller
 
             $course->course_name = $request->course_name;
 
-           /* $imageName = time().'.'.$request->image->extension();
-            $request->image->move(public_path('images'), $imageName);
-            $course->img_name = $imageName;
-            $course->img_path = public_path('images') . DIRECTORY_SEPARATOR . $imageName;
-            $course->img_url = 'images' . DIRECTORY_SEPARATOR . $imageName;*/
+            if($request->image != null){
+                $imageName = time().'.'.$request->image->extension();
+                $request->image->move(public_path('images'), $imageName);
+                $course->img_name = $imageName;
+                $course->img_path = public_path('images') . DIRECTORY_SEPARATOR . $imageName;
+                $course->img_url = 'images' . DIRECTORY_SEPARATOR . $imageName;
+            }
 
             $course->category = $request->category;
             $course->date = $request->date;
